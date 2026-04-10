@@ -19,7 +19,11 @@ app.use(cors({
 }));
 
 
+// importing routes
+import healthCheckRoutes from "./routes/healthcheck.routes.js";
 
+// using routes
+app.use("/api/v1/healthcheck", healthCheckRoutes);
 
 app.get("/", (req, res) => {
     res.send("welcome to the project management app");
