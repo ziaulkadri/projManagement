@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-
+import router from "./routes/auth.routes.js";
 const app = express();
 
 
@@ -24,6 +24,7 @@ import healthCheckRoutes from "./routes/healthcheck.routes.js";
 
 // using routes
 app.use("/api/v1/healthcheck", healthCheckRoutes);
+app.use("/api/v1/auth", router);
 
 app.get("/", (req, res) => {
     res.send("welcome to the project management app");

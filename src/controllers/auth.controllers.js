@@ -1,13 +1,8 @@
-import {User} from '../models/user.model.js';
-import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
-import crypto from 'crypto';
-import nodemailer from 'nodemailer';
-import Mailgen from 'mailgen';
+import {User} from '../models/user.models.js';
 import {ApiError} from '../utils/api-error.js';
 import {asyncHandler} from '../utils/async-handler.js';
 import {sendEmail,emailVerificationMailgenContent} from '../utils/mail.js';
-import { use } from 'react';
+import {ApiResponse} from '../utils/api-response.js';
 
 const generateAccessAndRefreshTokens = async(userId) => {
 
